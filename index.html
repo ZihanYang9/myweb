@@ -1,1 +1,43 @@
-hello
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title> Day and Night </title>
+    <style>
+      button {
+        background-color: blueviolet;
+        border-radius: 30px;
+        padding: 10px;
+        shape-image-threshold: calc(round);
+        cursor: pointer;
+      }
+      body {
+        background-image: url("sleep.jpg");
+        background-size: cover;
+        transition: backgrond-image 0.3s;
+      }
+      .page-title {
+        color: white;
+        font-size: 33px;
+      }
+    </style>
+  </head>
+  <body id="bodyElement">
+    <p class="page-title">Change the time</p>
+    <button onclick ="changeTime()" title="click to change", class="js-night-button">Night</button>
+    <script>
+      function changeTime() {
+        const buttonElement = document.querySelector('.js-night-button');
+        const bodyElement = document.getElementById('bodyElement');
+        if (buttonElement.innerHTML === 'Night') {
+          buttonElement.innerHTML = 'Day';
+          bodyElement.style.backgroundImage = 'url("eat.jpg")';
+        } else {
+          buttonElement.innerHTML = 'Night';
+          bodyElement.style.backgroundImage = 'url("sleep.jpg")';
+        }
+      }
+      document.getElementById('bodyElement').style.backgroundImage = 'url("sleep.jpg")';
+    </script>
+  </body>
+</html>
